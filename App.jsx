@@ -13,9 +13,7 @@ import React, { Component } from 'react';
 import MainContainer from './containers/MainContainer.jsx';
 
 
-const HelloComponent = () => {
-  return <h1>Hello World!</h1>;
-}
+
 
 
 
@@ -29,7 +27,6 @@ class App extends Component {
     return(
       <div>
         <MainContainer />
-        <HelloComponent />
       </div>
     )
   }

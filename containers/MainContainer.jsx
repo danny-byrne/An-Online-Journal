@@ -11,7 +11,7 @@ import EntryMaker from '../components/EntryMaker.jsx';
 
 
 const mapStateToProps = (store) => {
-
+  
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -30,17 +30,16 @@ class MainContainer extends Component {
   render(){
     return(
       <div className = "innerBox">
-        <h1 id="header">Journal Entry Maker</h1>
-        <HelloComponent />,
+        <h1 id="header">Journal Entry Maker</h1>  
         <EntryMaker newEntry={this.props.newEntry} handleKey={this.props.setNewEntry} handleClick={this.props.addNewEntry} />
       </div>
     );
   }
 }
 
-// ReactDOM.render(<HelloComponent />, document.getElementById('root'));
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
 
-//old shit that worked  vvvv
+
