@@ -4,7 +4,8 @@
   "description": "An Online Journal",
   "main": "app.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   },
   "babel": {
     "presets": [

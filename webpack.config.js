@@ -4,8 +4,8 @@ module.exports = {
   mode: 'development',
   entry: path.join(__dirname, './index.js'),
   output: {
-    path: __dirname,
-    filename: 'App.js'
+    path: path.join(__dirname, "build"),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -15,5 +15,9 @@ module.exports = {
         use: 'babel-loader'
       }
     ]
+  },
+  devServer: {
+    publicPath: "/build/",
+    filename: "bundle.js"
   }
 }

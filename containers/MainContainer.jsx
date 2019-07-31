@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EntryMaker from '../components/EntryMaker.jsx';
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 
 
 
@@ -29,12 +29,11 @@ class MainContainer extends Component {
 
   render(){
     return(
-      <div className = "entryBox">
+      <div className = "innerBox">
         <h1 id="header">Journal Entry Maker</h1>
-        <HelloComponent />
+        <HelloComponent />,
         <EntryMaker newEntry={this.props.newEntry} handleKey={this.props.setNewEntry} handleClick={this.props.addNewEntry} />
-        
-      </div>,
+      </div>
     );
   }
 }

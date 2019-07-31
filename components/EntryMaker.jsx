@@ -12,11 +12,11 @@
  import React from 'react';
 
  const EntryMaker = props => (
-
-    <div id='entryMaker'>
-      <input type='text' value={props.newEntry} onChange={(e)=>props.handleKey(e)} /> <button onClick={props.handleClick}> Add Entry </button>
+    <div class="entryBox">
+      <div id='entryMaker'>
+        <input type='text' value={props.newEntry} onChange={(e)=>props.handleKey(e)} /> <button onClick={props.handleClick}> Add Entry </button>
+      </div>
     </div>
-
  );
 
  export default EntryMaker;
