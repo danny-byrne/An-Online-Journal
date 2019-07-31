@@ -16,16 +16,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   totalEntries: 0,
   totalUsers: 0,
-  userPosts: [
-    {
-      user: "",
-      posts: 
-        {
-          date: "",
-          content: ""   
-        }
-    }
-  ]
+  entryList: []
 };
 
 
@@ -33,12 +24,26 @@ const mainReducer = (state = initialState, action) => {
     let entryList;
 
     switch (action.type) {
-      case types.SET_ENTRY: {
+
+      case types.SET_NEW_ENTRY: {
+        return {
+          ...state,
+          newEntry: action.payload
+        }
 
       }
 
-      case types.ADD_ENTRY: {
+      case types.ADD_NEW_ENTRY: {
+        const newJournalEntry = {
+          entry: state.newEntry,
+        }
+        entryList = state.entryList.slice();
+        entryList.push(newJournalEntry);
 
+        return {
+          ...state,
+          entryList,
+        }
       }
 
       case types.DELETE_ENTRY: {
@@ -49,19 +54,11 @@ const mainReducer = (state = initialState, action) => {
 
       }
 
-
-
-
-
       default:
         return state;
       
     };
 
-
-
-
-  
 }
 
 export default mainReducer;

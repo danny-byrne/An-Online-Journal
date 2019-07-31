@@ -4,23 +4,23 @@ import React, { Component } from 'react';
 // import  { createStore } from 'react-redux';
 import { connect } from 'react-redux';
 import EntryMaker from '../components/EntryMaker.jsx';
-
+import * as actions from '../actions/actions';
+import EntriesDisplay from '../components/EntriesDisplay.jsx';
 // const store = createStore(reducer);
 
 
 
 
-const mapStateToProps = (store) => {
-  
-}
-
-const mapDispatchToProps = dispatch => ({
-
+const mapStateToProps = (store) => ({
+  newEntry: store.main.newEntry,
 })
 
-const HelloComponent = () => {
-  return <h1>Hello World!</h1>;
-}
+const mapDispatchToProps = dispatch => ({
+  setNewEntry: e => dispatch(actions.setNewEntry(e.target.value)),
+  addNewEntry: e => dispatch(actions.addNewEntry())
+})
+
+
 
 class MainContainer extends Component {
   constructor(props) {
@@ -32,6 +32,7 @@ class MainContainer extends Component {
       <div className = "innerBox">
         <h1 id="header">Journal Entry Maker</h1>  
         <EntryMaker newEntry={this.props.newEntry} handleKey={this.props.setNewEntry} handleClick={this.props.addNewEntry} />
+        <EntriesDisplay />
       </div>
     );
   }

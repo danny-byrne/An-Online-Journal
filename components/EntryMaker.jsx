@@ -12,7 +12,7 @@
  import React from 'react';
 
  const EntryMaker = props => (
-    <div class="entryBox">
+    <div className="entryBox">
       <div id='entryMaker'>
         <input type='text' value={props.newEntry} onChange={(e)=>props.handleKey(e)} /> <button onClick={props.handleClick}> Add Entry </button>
       </div>
