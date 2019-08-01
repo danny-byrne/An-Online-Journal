@@ -17,7 +17,8 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = dispatch => ({
   setNewEntry: e => dispatch(actions.setNewEntry(e.target.value)),
-  addNewEntry: e => dispatch(actions.addNewEntry())
+  addNewEntry: e => dispatch(actions.addNewEntry()),
+  newDate: e => dispatch(actions.setDate())
 })
 
 
@@ -31,7 +32,7 @@ class MainContainer extends Component {
     return(
       <div className = "innerBox">
         <h1 id="header">Journal Entry Maker</h1>  
-        <EntryMaker newEntry={this.props.newEntry} handleKey={this.props.setNewEntry} handleClick={this.props.addNewEntry} />
+        <EntryMaker newEntry={this.props.newEntry} handleKey={this.props.setNewEntry} handleClick={this.props.addNewEntry} handleDate={this.props.newDate}/>
         <EntriesDisplay />
       </div>
     );

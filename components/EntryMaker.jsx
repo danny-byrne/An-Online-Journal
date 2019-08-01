@@ -14,7 +14,9 @@
  const EntryMaker = props => (
     <div className="entryBox">
       <div id='entryMaker'>
-        <input type='text' value={props.newEntry} onChange={(e)=>props.handleKey(e)} /> <button onClick={props.handleClick}> Add Entry </button>
+        <input type='text' value={props.newEntry} onChange={(e)=>props.handleKey(e)} /> 
+        <input type="date" value={props.newDate} ></input>
+        <button onClick={props.handleClick}> Add Entry </button>
       </div>
     </div>
  );

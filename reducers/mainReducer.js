@@ -24,25 +24,33 @@ const mainReducer = (state = initialState, action) => {
     let entryList;
 
     switch (action.type) {
-
       case types.SET_NEW_ENTRY: {
         return {
           ...state,
           newEntry: action.payload
         }
-
+      }
+      case types.SET_DATE: {
+        return{
+          ...state,
+          newDate: action.payload
+        }
       }
 
       case types.ADD_NEW_ENTRY: {
         const newJournalEntry = {
-          entry: state.newEntry,
+          date: state.newDate,
+          entry: state.newEntry
         }
         entryList = state.entryList.slice();
         entryList.push(newJournalEntry);
+        const totalEntries = state.totalEntries + 1;
 
         return {
           ...state,
           entryList,
+          totalEntries,
+          newEntry: '',
         }
       }
 

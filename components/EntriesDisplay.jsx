@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 
 
  import React from 'react';
- import UniqueId from 'react-html-id';
+
 
 
  const mapStateToProps = (store) => ({
@@ -21,10 +21,7 @@ import { connect } from 'react-redux';
  })
 
 
-// constructor(){
-//   super();
-  
-// }
+
 
 const EntriesDisplay = (props) => {
 const entryList = [];
@@ -32,15 +29,18 @@ for(let i = 0; i < props.entryList.length; i++){
   //pull object from entry list
   let obj = props.entryList[i];
   let entry = obj.entry;
+  let date = obj.date;
 
+  
   entryList.push(
     <div>
-      <li key = {i}>
-        {entry}
+      <li key = {entry}>
+        {date} : {entry}
       </li>
     </div>
   )
 }
+
 return(
   <div className="displayBox">
     <h4>Entries</h4>

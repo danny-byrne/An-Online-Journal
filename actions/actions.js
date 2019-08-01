@@ -22,3 +22,8 @@ export const addNewEntry = () => ({
   type: types.ADD_NEW_ENTRY,
   payload: ''
 })
+
+export const setDate = (value) => ({
+  type: types.SET_DATE,
+  payload: value
+})
